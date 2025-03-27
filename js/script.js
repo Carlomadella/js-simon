@@ -58,7 +58,15 @@ const trentaZero = setInterval(function () {
         secondi--
         displayNum.innerText = secondi;
     }
-})
+    else{
+        displayNum.innerText = "Inserisci i numeri";
+        istruzioni.classList.add("d-none")
+        lista.classList.add("d-none")
+        form.classList.remove("d-none")
+        clearInterval(trentaZero)
+    }
+    
+},1000)
 
 
 
