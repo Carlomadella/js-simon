@@ -28,16 +28,17 @@
 
 // INIZIO ESERCIZIO
 
-// create variabile per riprendere la lista
+// create variabile per riprendere gli elementi HTML utili
 const lista = document.getElementById("numbers-list");
 const displayNum = document.getElementById("countdown")
 const istruzioni = document.getElementById("instructions")
 const form = document.getElementById("answers-form")
+const button = document.querySelector("button");
+const paragraph = document.getElementById("message")
 
-
-
+// creo l'array dove verranno inseriti i numeri generati randomicamente
 let arrayRandom = [];
-
+// creo ciclo for per popolare l'array e creare gli elementi HTML li all'interno della ul
 for (let i = 0; i < 5; i++) {
     let generateNum = Math.floor(Math.random() * 50) +1;
     arrayRandom.push(generateNum)
@@ -48,11 +49,12 @@ for (let i = 0; i < 5; i++) {
 
 console.log(arrayRandom);
 
-
-let secondi = 5;
+// scandisco di quanti secondi deve essere il countdown
+let secondi = 30;
 
 displayNum.innerText = secondi
 
+// creo la funzione per il countdown
 const trentaZero = setInterval(function () {
     if (secondi != 0){
         secondi--
@@ -63,10 +65,18 @@ const trentaZero = setInterval(function () {
         istruzioni.classList.add("d-none")
         lista.classList.add("d-none")
         form.classList.remove("d-none")
+        // stoppa l'intervallo
         clearInterval(trentaZero)
     }
-    
+
 },1000)
+
+// creo l'eventListener che si attiva quando si preme il bottone
+button.addEventListener('click', function (event) {
+    // per far si che la pagina non si refreshi dopo aver schiacciato il bottone
+    event.preventDefault(); 
+    
+});
 
 
 
