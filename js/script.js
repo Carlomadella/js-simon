@@ -30,6 +30,12 @@
 
 // create variabile per riprendere la lista
 const lista = document.getElementById("numbers-list");
+const displayNum = document.getElementById("countdown")
+const istruzioni = document.getElementById("instructions")
+const form = document.getElementById("answers-form")
+
+
+
 let arrayRandom = [];
 
 for (let i = 0; i < 5; i++) {
@@ -42,6 +48,17 @@ for (let i = 0; i < 5; i++) {
 
 console.log(arrayRandom);
 
+
+let secondi = 5;
+
+displayNum.innerText = secondi
+
+const trentaZero = setInterval(function () {
+    if (secondi != 0){
+        secondi--
+        displayNum.innerText = secondi;
+    }
+})
 
 
 
