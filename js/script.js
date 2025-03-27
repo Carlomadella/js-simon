@@ -103,7 +103,18 @@ function compareAnswers(arrayBis, arrayRandom){
 }
 
 console.log(commonNum);
-
+    // richiamo la funzione 
+    const arrayDiff = compareAnswers(arrayBis, arrayRandom);
+    // stampo a video i risultati della funzione
+    if (commonNum.length === 5){
+        message.innerText = 'Tutti i numeri inseriti sono corretti';
+    } 
+    else if (commonNum.length > 0){
+        message.innerText = `Hai inserito ${commonNum.length} numeri corretti: ${commonNum}`;
+    } 
+    else {
+        message.innerText = 'Nessun numero inserito correttamente';
+    }
 });
 
 
