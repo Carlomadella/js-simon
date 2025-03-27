@@ -28,3 +28,26 @@
 
 // INIZIO ESERCIZIO
 
+// create variabile per riprendere la lista
+const lista = document.getElementById("numbers-list");
+let arrayRandom = [];
+
+for (let i = 0; i < 5; i++) {
+    let generateNum = Math.floor(Math.random() * 50) +1;
+    arrayRandom.push(generateNum)
+    let listElement = document.createElement("li");
+    listElement.textContent = arrayRandom[i];
+    lista.appendChild(listElement);
+}
+
+console.log(arrayRandom);
+
+
+
+
+
+
+
+
+
+ 
