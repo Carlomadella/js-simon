@@ -75,7 +75,15 @@ const trentaZero = setInterval(function () {
 button.addEventListener('click', function (event) {
     // per far si che la pagina non si refreshi dopo aver schiacciato il bottone
     event.preventDefault(); 
-    
+    // creo l'array che contiene i valori di input dell'utente
+    const arrayBis = [];
+// creo ciclo for per pushare i valori nell'array appena creato
+for(let i = 0; i < 5; i++) {
+    arrayBis.push(document.querySelector(`input:nth-child(${i+1})`).value);
+}
+
+console.log(arrayBis);
+
 });
 
 
