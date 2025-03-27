@@ -84,6 +84,26 @@ for(let i = 0; i < 5; i++) {
 
 console.log(arrayBis);
 
+// creo l'array che contiene i valori uguali tra l'array creato all'inizio e quello nuovo
+let commonNum = [];
+// creo la funzione che mi permette di confrontare i valori dei due array 
+function compareAnswers(arrayBis, arrayRandom){
+    for (let i = 0; i < arrayBis.length; i++){
+        for (let index = 0; index < arrayRandom.length; index++){
+            if (arrayBis[i] == arrayRandom[index]){
+                // pusho i valori comuni nel terzo array creato
+                commonNum.push(arrayBis[i]);
+                // non permette ripetizioni nel primo array
+                arrayRandom.splice(index, 1);
+            }
+        }
+    }
+    // la funzione deve dare come risultato il terzo array creato
+    return commonNum;
+}
+
+console.log(commonNum);
+
 });
 
 
